@@ -9,10 +9,11 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>pethotel</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
     <script src="./js/script.js"> </script>
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/tiles.css">
     <style>
         /* slider */
         .slider_wrap{
@@ -55,15 +56,14 @@
             transition: all 0.3s;
         }
         .slider_bt:hover{
-            background-color: #e59f5a;
+            background-color: rgba(255, 255, 255,0.5);
         }
-        
-
         /* slider end */
+
         /* section */
         section{
             width: 1270px; height: 650px;
-            margin: 300px auto;
+            margin: 250px auto;
             position: relative;
         }
         .bar{
@@ -121,6 +121,21 @@
             width: 150px; height: 200px;
             background-image: url(./img/con_1.png);
             transition: transform 0.3s;
+            font-size: 15px; font-weight: 800;
+            text-align: center;
+        }
+        .con span{
+            display: inline-block;
+            margin-top: 40px; margin-bottom: 5px;
+            color: #fff;
+        }
+        .con p{
+            font-size: 25px;
+            margin-top: 50px;
+            color:#e59f5a;
+        }
+        .con:last-child p{
+            margin-top: 40px;
         }
         .con:hover{
             transform: scale(1.05);
@@ -209,70 +224,6 @@
         /* experience end */
         /* section end */
 
-        /* footer */
-        footer{
-            width: 100%; height: 450px;
-            background-color: #8c8c8c;
-        }
-
-        .side_wrap{
-            width: 42px; height: 42px;
-            position: fixed;
-            bottom: 50px; right: 50px;
-            display: flex;
-            flex-direction: column-reverse;
-            justify-content: space-between;
-            /* overflow: hidden; */
-            transition: all 0.3s;
-        }
-
-        .side_btn{
-            display: block;
-            width: 40px; height: 40px;
-            border: 1px solid rgba(50, 50, 50, 0.5);
-            /* background-color: #e59f5a; */
-            border-radius: 25px;
-            font-size: 40px; line-height: 42px;
-            text-align: center; font-weight: 100;
-            color: rgba(50, 50, 50, 0.5);
-            z-index: 50;
-            position: relative;
-            top: 0; right: 0;
-            opacity: 0;
-            transition: all 0.5s;
-            fill:#fff;
-        }
-        .side_btn:first-child{
-            opacity: 1;
-        }
-        .side_btn:nth-child(2){
-            top: 42px;
-        }
-        .side_btn:nth-child(3){
-            top: 84px;
-        }
-        .side_btn:nth-child(4){
-            top: 126px;
-        }
-        
-        .side_wrap:hover{
-            height: 180px;
-        }
-        .side_wrap:hover .side_btn{
-            opacity: 1;
-            top:0
-        }
-        .move_bt{
-            background-color: #e59f5a;
-            color: #fff;
-            border: #e59f5a;
-        }
-        .move_bt:hover{
-            width: 102px;
-            right: 60px;
-        }
-
-
     </style>
 </head>
 <body>
@@ -309,14 +260,23 @@
     </div>
 
     <div class="side_wrap">
-        <a class="side_btn" href="#">+</a>
-        <a class="side_btn move_bt" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19.619 21.671c-5.038 1.227-8.711-1.861-8.711-5.167 0-3.175 3.11-5.467 6.546-5.467 3.457 0 6.546 2.309 6.546 5.467 0 1.12-.403 2.22-1.117 3.073-.029 1 .558 2.435 1.088 3.479-1.419-.257-3.438-.824-4.352-1.385zm-10.711-5.167c0-4.117 3.834-7.467 8.546-7.467.886 0 1.74.119 2.544.338-.021-4.834-4.761-8.319-9.998-8.319-5.281 0-10 3.527-10 8.352 0 1.71.615 3.391 1.705 4.695.047 1.527-.851 3.718-1.661 5.313 2.168-.391 5.252-1.258 6.649-2.115.803.196 1.576.304 2.328.363-.067-.379-.113-.765-.113-1.16z"/></svg>
+        <a class="side_btn" href="#">
+            <svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23"><defs></defs><polygon class="cls-1" points="23 11.03 11.97 11.03 11.97 0 11.03 0 11.03 11.03 0 11.03 0 11.97 11.03 11.97 11.03 23 11.97 23 11.97 11.97 23 11.97 23 11.03"/></svg>
+            <svg class="plus arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.53 11.97"></defs><polygon class="cls-1" points="0.71 11.97 11.26 1.41 21.82 11.97 22.53 11.26 11.97 0.71 11.26 0 0 11.26 0.71 11.97"/></svg>
         </a>
-        <a class="side_btn move_bt" href="#">+</a>
-        <a class="side_btn move_bt" href="#">+</a>
+        <a class="side_btn move_bt" href="#">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19.619 21.671c-5.038 1.227-8.711-1.861-8.711-5.167 0-3.175 3.11-5.467 6.546-5.467 3.457 0 6.546 2.309 6.546 5.467 0 1.12-.403 2.22-1.117 3.073-.029 1 .558 2.435 1.088 3.479-1.419-.257-3.438-.824-4.352-1.385zm-10.711-5.167c0-4.117 3.834-7.467 8.546-7.467.886 0 1.74.119 2.544.338-.021-4.834-4.761-8.319-9.998-8.319-5.281 0-10 3.527-10 8.352 0 1.71.615 3.391 1.705 4.695.047 1.527-.851 3.718-1.661 5.313 2.168-.391 5.252-1.258 6.649-2.115.803.196 1.576.304 2.328.363-.067-.379-.113-.765-.113-1.16z"/></svg>
+            <p>문의하기</p>
+        </a>
+        <a class="side_btn move_bt" href="#">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"/></svg>
+            <p>호텔예약</p>
+        </a>
+        <a class="side_btn move_bt" href="#">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.822 18.096c-3.439-.794-6.64-1.49-5.09-4.418 4.72-8.912 1.251-13.678-3.732-13.678-5.082 0-8.464 4.949-3.732 13.678 1.597 2.945-1.725 3.641-5.09 4.418-3.073.71-3.188 2.236-3.178 4.904l.004 1h23.99l.004-.969c.012-2.688-.092-4.222-3.176-4.935z"/></svg>
+            <p>마이페이지</p>
+        </a>
     </div>
-
 
     <section class="introduce">
         <div class="txt_introduce">
@@ -326,9 +286,27 @@
             <a class="more" href="#">더보기 +</a>
         </div>
         <div class="intro_con_wrap">
-            <div class="con"></div>
-            <div class="con"></div>
-            <div class="con"></div>
+            <div class="con">
+                <span>Room</span><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="41.051" height="23.946" viewBox="0 0 41.051 23.946">
+                    <path id="패스_4" data-name="패스 4" d="M41.051,28.946V16.973a1.711,1.711,0,0,0-1.71-1.71H1.71A1.711,1.711,0,0,0,0,16.973V28.946H1.71V25.525H39.34v3.421ZM8.552,13.552v-1.71a1.711,1.711,0,0,1,1.71-1.71H17.1a1.711,1.711,0,0,1,1.71,1.71v1.71h3.421v-1.71a1.711,1.711,0,0,1,1.71-1.71h6.842a1.711,1.711,0,0,1,1.71,1.71v1.71H37.63V6.71A1.711,1.711,0,0,0,35.92,5H5.131a1.711,1.711,0,0,0-1.71,1.71v6.842Z" transform="translate(0 -5)" fill="#fff" fill-rule="evenodd"/>
+                </svg>
+                <p>23</p>
+            </div>
+            <div class="con">
+                <span>Petsitter</span><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="36.822" height="26.301" viewBox="0 0 36.822 26.301">
+                    <path id="패스_5" data-name="패스 5" d="M14.628,21.831C18.4,20.961,20.6,20.2,18.9,16.989,13.726,7.222,17.526,2,22.988,2c5.569,0,9.276,5.423,4.09,14.989-1.752,3.228.575,3.99,4.263,4.842,3.265.755,3.481,2.35,3.481,5.114V28.3H11.151C11.151,24.691,10.861,22.7,14.628,21.831ZM-2,28.3H8.269c-.046-10.753,4.519-6.987,4.519-14.633A4.7,4.7,0,0,0,7.859,8.575c-4.1,0-6.946,3.918-3.068,11.242C6.065,22.224,3.435,22.8.608,23.449-1.841,24.014-2,25.211-2,27.285V28.3Z" transform="translate(2 -2)" fill="#fff"/>
+                </svg>
+                <p>15</p>
+            </div>
+            <div class="con">
+                <span>Services</span><br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="28.908" height="28.908" viewBox="0 0 28.908 28.908">
+                    <path id="패스_7" data-name="패스 7" d="M14.4,13.25c4.011,0,8.5,7.375,9.193,10.5s-1.2,5.7-4.2,4.953c-1.315-.326-3.917-1.574-4.941-1.555-1.114.019-2.865,1.007-4.321,1.508-3.2,1.1-5.682-1.545-4.83-4.906C6.236,20.073,10.7,13.25,14.4,13.25Zm13-5.288c1.431.649,1.962,3.4,1.077,6.348-.848,2.82-2.806,4.584-5.488,3.368-2.326-1.056-2.6-3.828-1.077-6.348C23.446,8.792,25.967,7.311,27.4,7.962Zm-26.46.85c-1.257.878-1.277,3.609.1,6.281,1.315,2.554,3.509,3.9,5.863,2.252,2.043-1.427,1.812-4.135-.1-6.281S2.2,7.934.938,8.812ZM19.78.029c1.594.3,2.8,2.925,2.628,6.1-.161,3.032-1.692,5.278-4.676,4.712-2.588-.49-3.539-3.2-2.627-6.1C16.022,1.826,18.188-.273,19.78.029ZM7.38.1C5.853.642,5.067,3.418,5.721,6.527c.625,2.971,2.484,4.955,5.344,3.938,2.481-.882,3-3.706,1.659-6.427C11.369,1.3,8.907-.444,7.38.1Z" transform="translate(0 0)" fill="#fff" fill-rule="evenodd"/>
+                </svg>
+                <p>various</p>
+            </div>
         </div>
         <div class="intro_img_wrap">
             <img src="./img/main_2.png" alt="dog" height="650">
@@ -367,19 +345,50 @@
     </section>
     
     <footer>
-        <p class="foot_logo">logo</p>
-        <div class="info">
-            <p>주소</p>
-            부산진구 서전로 10번길 28
+        <div class="footer_wrap">
+            <a class="foot_logo" href="#">Logo</a>
+            <div class="info">
+                <p class="min_title">주소</p>
+                부산진구 서전로 10번길 28
+            </div>
+            <div class="info">
+                <p class="min_title">연락처</p>
+                대표전화 010-0000-0000
+            </div>
+            <div class="info">
+                <p class="min_title">영업시간</p>
+                연중 무휴 오전 09시 ~ 오후 6시
+            </div>
+            <div class="foot_menu_wrap">
+                <ul>
+                    <li class="min_title">서비스</li>
+                    <li><a href="#">호텔 예약</a></li>
+                    <li><a href="#">예약 조회</a></li>
+                    <li><a href="#">고객 리뷰</a></li>
+                </ul>
+                <div class="h_hr"></div>
+                <ul>
+                    <li class="min_title">소개</li>
+                    <li><a href="#">호텔 소개</a></li>
+                    <li><a href="#">호텔 시설</a></li>
+                    <li><a href="#">멤버쉽 소개</a></li>
+                </ul>
+                <div class="h_hr"></div>
+                <ul>
+                    <li class="min_title">지원</li>
+                    <li><a href="#">고객 센터</a></li>
+                    <li><a href="#">전화 상담</a></li>
+                    <li><a href="#">카카오톡 상담</a></li>
+                </ul>
+            </div>
+            <div class="hr"></div>
+            <p class="copy">
+                ㈜ 회사명 | 대표이사 : 대표명 | 부산진구 <br>
+                사업자 등록 번호 : 000-00-00000 | 통신판매 신고번호 : 2000-부산진구-0000 <br>
+                COPYRIGHT © 2022 회사명
+            </p>
         </div>
-        <div class="info">
-            <p>영업시간</p>
-            연중 무휴 오전 09시 ~ 오후 6시
-        </div>
-        <div class="info">
-            <p>연락처</p>
-            대표전화 010-0000-0000
-        </div>
+        
     </footer>
 
 </body>

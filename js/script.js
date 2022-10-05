@@ -20,9 +20,24 @@ $(function(){
     var $scrollBar = $('.scroll_bar');
     var $scrollBarIn = $('.scroll_bar_in');
     var scrollBarMax = 160;
+    var scrollMax = 510;
 
     $rollBanner.mousewheel(function(event, delta) {
         this.scrollLeft -= (delta * 30);
         event.preventDefault();
+
+        var scrollW= this.scrollLeft*(scrollBarMax/scrollMax);
+        $scrollBarIn.css("left",scrollW+"px");
     });
+
+    $scrollBarIn.draggable({
+        containment : 'parent', // 부모요소 안에 종속
+        drag:function(){
+            var pos = $(this).position().left;
+            var leftPos = pos-475;
+            
+        }
+    });
+
+
 });
