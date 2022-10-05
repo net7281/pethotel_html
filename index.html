@@ -7,50 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pethotel</title>
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js'></script>
-    <script>
-        
-        $(function(){
-            
-            // header scroll
-            var $header = $('header');
-            var $nav = $('nav');
-
-            var $window = $(window);
-            var pageOffsetTop = 200;
-            
-            $window.on('scroll', function(){ //스크롤시
-                var scrolled = $window.scrollTop() >= pageOffsetTop;
-                $header.toggleClass('down', scrolled);
-                $nav.toggleClass('nav_down', scrolled);
-            });
-
-
-            //roll banner
-            var widthSize =1510;
-            var $rollBanner = $('.roll_banner');
-
-            var $scrollBar = $('.scroll_bar');
-            var $scrollBarIn = $('.scroll_bar_in');
-            var scrollBarMax = 160;
-
-            $rollBanner.mousewheel(function(event, delta) {
-                this.scrollLeft -= (delta * 30);
-                event.preventDefault();
-            });
-            
-            
-
-
-        });
-
-
-
-        
-
-
-    </script>
+    <script src="./js/script.js"> </script>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/header.css">
     <style>
