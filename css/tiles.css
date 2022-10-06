@@ -30,6 +30,7 @@ header{
     position: absolute;
     left:-47px ; margin-left: 50%;
     top: 30px;
+    letter-spacing :-2px;
 }
 .log_wrap{
     position: absolute;
