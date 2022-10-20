@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="shortcut icon" href="./img/anitel.ico">
     <title>pethotel</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -210,6 +211,7 @@
             flex-direction: row;
             justify-content: space-between;
             position: relative;
+            left:0;
             /* left: -510px; */
         }
         .roll_banner_in img{
@@ -331,7 +333,7 @@
             <div class="scroll_bar_in"></div>
         </div>
         <div class="roll_banner">
-            <div class="roll_banner_in">
+            <div class="roll_banner_in" onscroll="scrollEV(this)">
                 <img src="./img/roll_1.png" alt="roll1">
                 <img src="./img/roll_2.png" alt="roll2">
                 <img src="./img/roll_3.png" alt="roll3">
